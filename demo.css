@@ -1,0 +1,64 @@
+* {
+	font-family: 'Roboto', sans-serif;
+}
+html, body {
+	font-size: 16px;
+}
+
+section#demo {
+   /* //background: #fbfbfb; */
+    position: relative;
+    padding: 0;
+    min-height: 100vh;
+    transition: height 9999s;
+}
+.vertical-align {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0;
+	width: 100%;
+}
+.card {
+	background: #fff;
+    box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.15);
+    padding: 18px 15px;
+    height:500px;
+}
+
+  .chatnowbtnopen {
+ /* background-color: #555!important;*/
+  /*color: white!important;*/
+  padding: 16px 20px!important;
+  border: none!important;
+  /*cursor: pointer!important;*/
+ /* // opacity: 0.8!important; */
+  position: fixed!important;
+  bottom: 23px!important;
+  right: 28px!important;
+  width: 280px!important;
+}
+
+  .chatnowbtnclose {
+ /* // background-color: #555!important; */
+  /* //color: white!important; */
+  padding: 16px 20px!important;
+  border: none!important;
+  /* //cursor: pointer!important; */
+ /* // opacity: 0.8!important; */
+  position: fixed!important;
+  bottom: 23px!important;
+  right: 28px!important;
+  width: 280px!important;
+}
+a.upperchatnowbtnclose {
+  position: absolute;    
+  top: -12px;
+  right: -4px;
+}
+.message img {
+  width: 80%!important;
+}
+.li-post-group img {
+  width: 15%;
+}

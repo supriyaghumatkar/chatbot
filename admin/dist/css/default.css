@@ -1,0 +1,60 @@
+#myscripttext{padding:20px; border:1px solid #dcdcdc;}
+.controls {margin-top: 22px;}
+a.remove_this , a.remove_this_multi {margin-left: 50px; width:95px;}
+.insertval {width: 95px;}
+.chatbotwrap.vertical-align {position: fixed !important; bottom: 89px !important; right: 30px; transform:none !important; width: 25% !important; top:auto; left:auto; height:500px;}
+.li-post-title a {float: right; margin: 0 5px;}
+div.conv-form-wrapper:before{background:none;}
+.chatfooter{position: absolute; bottom: -27px; z-index: 9; margin: 0 auto; width: 100%; text-align: center; font-size: 13px;}
+.chatfooter span{font-weight: bold; color: #f15a24;}
+div.conv-form-wrapper div#messages {
+    
+    position: absolute;
+    top: 13px;
+    height: 323px !important;
+    width: 100%!important;
+    padding-bottom: 20px!important;
+    overflow: auto !important;
+    padding-right: 10px;}
+
+    div.conv-form-wrapper div.wrapper-messages{height:394px; max-height: 400px !important;  margin-bottom: 0 !important;}
+    .options.dragscroll {
+        padding: 5px 4px;
+        background: #f1f1f1;
+        border: 1px solid #d8d8d8;
+        max-height:70px;
+    }
+    /* width */
+    #messages::-webkit-scrollbar , .dragscroll::-webkit-scrollbar{
+      width: 5px !important;
+    }
+    
+    /* Track */
+    #messages::-webkit-scrollbar-track, .dragscroll::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey !important; 
+      border-radius: 5px !important;
+    }
+     
+    /* Handle */
+    #messages::-webkit-scrollbar-thumb, .dragscroll::-webkit-scrollbar-thumb {
+      background: #a5a5a5 !important; 
+      border-radius: 5px !important;
+    }
+    
+    /* Handle on hover */
+    #messages::-webkit-scrollbar-thumb:hover, .dragscroll::-webkit-scrollbar-thumb:hover {
+      background: #F15A24 !important; 
+    }
+    
+    div.conv-form-wrapper div.options {
+        overflow: auto;
+    }
+    div.conv-form-wrapper div.options div.option {
+        font-size: 13px !important;
+        float: left;
+        width: auto !important;    padding: 4px 6px;
+    }
+    #multi input, #inc input {
+        width: 60%;
+        float: left;
+    }

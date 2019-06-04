@@ -1,0 +1,98 @@
+<?php
+ include('include.php');
+if(isset($_POST['Action']) && $_POST['Action']=='CheckTypeInsert' && !empty($_POST['typeinsert']))
+{ 
+   $typeinsert=$_POST['typeinsert'];
+
+   if($typeinsert=='texttype')
+   {
+      
+      $str=strip_tags($_POST['dataval'],"<img>");
+      $dataval = $str;
+
+       $dataval =$_POST['dataval'];
+       $query=mysqli_query($con,"update scriptdata set question_text='$dataval' where script_id='".$_POST['script_id']."'");
+       echo "update scriptdata set question_text='$dataval' where script_id='".$_POST['script_id']."'";
+      
+   }
+
+   if($typeinsert=='statementtype')
+   {
+     
+      $str=strip_tags($_POST['dataval'],"<img>");
+      $dataval = $str;
+
+      $dataval= $_POST['dataval'];
+      $query=mysqli_query($con,"update scriptdata set question_text='$dataval' where script_id='".$_POST['script_id']."'");
+     
+   }
+   
+   
+   if($typeinsert=='dropdowntype')
+   {
+     
+      $typeinsert=$_POST['typeinsert'];
+
+       parse_str($_POST['dropdownoption'],$searcharray);
+       $str=strip_tags($_POST['dataval'],"<img>");
+       $dataval = $str;
+       $query=mysqli_query($con,"update scriptdata set question_text='$dataval' where script_id='".$_POST['script_id']."'");
+       $last_insert_id=$_POST['script_id']; 
+       $i=0; 
+       extract($searcharray);
+      // echo "delete from select_option where script_id='".$_POST['script_id']."'";
+       $deleteoption=mysqli_query($con,"delete from select_option where script_id='".$_POST['script_id']."'");
+       foreach($options as $d)
+      { 
+         //echo "insert into select_option(script_id,option_text)values('$last_insert_id','$d')";
+        $queryoption=mysqli_query($con,"insert into select_option(script_id,option_text)values('$last_insert_id','$d')"); 
+        $i++;         
+      }
+       
+   }
+   
+   if($typeinsert=='multiselecttype')
+   {
+     
+      $typeinsert=$_POST['typeinsert'];
+
+       parse_str($_POST['multidropwnoption'], $searcharray);
+       $str=strip_tags($_POST['dataval'],"<img>");
+       $dataval = $str;
+       $query=mysqli_query($con,"update scriptdata set question_text='$dataval' where script_id='".$_POST['script_id']."'");
+       $last_insert_id=$_POST['script_id'];  
+       $deleteoption=mysqli_query($con,"delete from select_option where script_id='".$_POST['script_id']."'");
+        $i=0;  
+        extract($searcharray);  
+        foreach($muloptions as $d)
+       { 
+         $queryoption=mysqli_query($con,"insert into select_option(script_id,option_text)values('$last_insert_id','$d')"); 
+         $i++;         
+       }
+   }
+   
+   if($typeinsert=='emailtype')
+   {
+      $str=strip_tags($_POST['dataval'],"<img>");
+      $dataval = $str;
+         $query=mysqli_query($con,"update scriptdata set question_text='$dataval' where script_id='".$_POST['script_id']."'");
+   }
+
+   if($typeinsert=='rangetype')
+   {
+
+
+      $str=strip_tags($_POST['dataval'],"<img>");
+      $dataval = $str;
+     
+      $query=mysqli_query($con,"update scriptdata set question_text='$dataval' where script_id='".$_POST['script_id']."'");
+      $minimum=$_POST['minimum'];
+      $maximum=$_POST['maximum'];
+      $prifix=$_POST['prifix'];
+      echo "update into range_option set minimum='$minimum',maximum='$maximum',prifix='$prifix' where script_id='".$_POST['script_id']."'";
+      $query2=mysqli_query($con,"update range_option set minimum='$minimum',maximum='$maximum',prifix='$prifix' where script_id='".$_POST['script_id']."'");
+      
+   }
+    
+}
+?>
